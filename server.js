@@ -16,7 +16,7 @@ app.post('/generate-recommendations', async (req, res) => {
     // Call GPT-3 API with the 'locale' parameter and generate recommendations
     const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', {
       prompt: `Act as a climate justice activist/expert. Generate 20 actionable sustainable initiatives and organizations for a person in ${locale}.`,
-      max_tokens: 150,
+      max_tokens: 1500,
     }, {
       headers: {
         'Content-Type': 'application/json',
