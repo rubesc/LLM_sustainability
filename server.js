@@ -1,46 +1,24 @@
+// In your server.js or index.js file
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const { OpenAIAPIKey, OpenAIAPIEndpoint } = require('./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'); // Replace with your GPT-3 credentials
-
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.json());
 
-app.post('/your-api-endpoint', async (req, res) => {
-    const { locale } = req.body;
+// Define a route for your API endpoint
+app.post('/generate-recommendations', (req, res) => {
+  // Handle GPT-3 API request here
+  const locale = req.body.locale;
+  // Call GPT-3 API with the 'locale' parameter and generate recommendations
+  // ...
 
-    // Perform GPT-3 request (replace with your GPT-3 logic)
-    const gpt3Response = await performGPT3Request(locale);
-
-    // Process GPT-3 response and send back to the client
-    const processedData = processGPT3Response(gpt3Response);
-    res.json(processedData);
+  // Send the recommendations as the response
+  res.json({ recommendations: /* your generated recommendations */ });
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-async function performGPT3Request(locale) {
-    // Implement your GPT-3 API request logic here
-    // Example:
-    const response = await fetch(OpenAIAPIEndpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${OpenAIAPIKey}`,
-        },
-        body: JSON.stringify({ prompt: `Act as a climate justice activist/expert in ${locale} ### ...` }),
-    });
-
-    const data = await response.json();
-    return data.choices[0].text;
-}
-
-function processGPT3Response(response) {
-    // Implement logic to process GPT-3 response and return structured data
-    // Example:
-    const recommendations = response.split('###').map(item => item.trim());
-    return recommendations;
-}
