@@ -25,22 +25,22 @@ app.listen(port, () => {
 async function performGPT3Request(locale) {
     // Implement your GPT-3 API request logic here
     // Example:
-    // const response = await fetch(OpenAIAPIEndpoint, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer ${OpenAIAPIKey}`,
-    //     },
-    //     body: JSON.stringify({ prompt: `Act as a climate justice activist/expert in ${locale} ### ...` }),
-    // });
+    const response = await fetch(OpenAIAPIEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${OpenAIAPIKey}`,
+        },
+        body: JSON.stringify({ prompt: `Act as a climate justice activist/expert in ${locale} ### ...` }),
+    });
 
-    // const data = await response.json();
-    // return data.choices[0].text;
+    const data = await response.json();
+    return data.choices[0].text;
 }
 
 function processGPT3Response(response) {
     // Implement logic to process GPT-3 response and return structured data
     // Example:
-    // const recommendations = response.split('###').map(item => item.trim());
-    // return recommendations;
+    const recommendations = response.split('###').map(item => item.trim());
+    return recommendations;
 }
