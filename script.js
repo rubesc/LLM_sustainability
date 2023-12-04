@@ -17,5 +17,5 @@ const generateRecommendations = async () => {
       // ...
     } catch (error) {
       console.error('Error fetching recommendations:', error);
-    }
+    }nod
   };
