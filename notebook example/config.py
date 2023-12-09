@@ -1,2 +1,0 @@
-# config.py
-CHATGPT_API_KEY = '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'
