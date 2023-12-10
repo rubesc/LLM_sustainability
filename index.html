@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Climate Justice Initiatives in NYC</title>
+    <title>ChatGPT Interaction</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Climate Justice Initiatives in your local area</h1>
-        <label for="localeInput">Enter your locale (e.g., NYC): </label>
-        <input type="text" id="localeInput" placeholder="Enter your locale">
-        <button onclick="generateRecommendations()">Generate Recommendations</button>
 
-        <div id="results"></div>
+    <h1>Climate Initiatives in your local area</h1>
+    <br>
+    <div>
+        <label for="promptInput"> <B> Where are you based? </B> </label>
+        <input type="text" id="promptInput" placeholder="city name or zipcode">
+        <button onclick="sendPrompt()">Submit</button>
+        <!-- <p id="result"></p> -->
     </div>
+    <p>(it takes a min to run...!) </p>
+    <br>
+    <br>
+    <div id="tableContainer" ></div>
+    <!-- <script src="script.js"></script> -->
+    <script src="script_key.js"></script>
 
-    <script src="script.js"></script>
+
 </body>
-
 </html>
