@@ -26,3 +26,8 @@ San Diego:
 
 ### Notebook Example
 Check out the notebook example to interact with the ChatGPT API. Note that the output in the notebook might not be as legible due to formatting.
+
+### Other Remarks
+While the primary focus of this project revolves around promoting sustainable behavior, it's crucial to acknowledge that each LLM query prompt has a notable carbon footprint. Although this impact is typically invisible to end users, it remains an important consideration.
+
+As of now, the tool operates exclusively on local servers, mitigating the carbon footprint implications due to its localized usage. However, envisioning the possibility of transforming this tool into a public service hosted on external servers prompts the need for carbon footprint optimization strategies. One potential approach involves pre-saving query results and delivering them through some form of Elasticsearch, eliminating the need to run a new API prompt for each user inquiry and thus minimizing environmental impact.
